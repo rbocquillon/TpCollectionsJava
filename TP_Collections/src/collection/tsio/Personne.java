@@ -1,6 +1,6 @@
 package collection.tsio;
 
-import java.util.*;
+import java.util.Calendar;
 
 public class Personne implements Comparable<Personne> {
 
@@ -39,7 +39,7 @@ public class Personne implements Comparable<Personne> {
 	
 	@Override
 	public int compareTo(Personne p) {
-		return this.getPrenom().compareTo(p.getPrenom());
+		return this.prenom.compareTo(p.getPrenom());
 	}
 	
 }
