@@ -38,14 +38,12 @@ public class GestionnaireContacts {
 	}
 	
 	public boolean ajouter(Personne p, Contact c) {
-		HashMap<Personne, Contact> gestionnaire= this.getGestionnaire();
 		gestionnaire.put(p, c);
-		this.setGestionnaire(gestionnaire);
-		return this.getGestionnaire().containsValue(c);
+		return this.gestionnaire.containsValue(c);
 	}
 	
 	public Contact contact(Personne p) {
-		return this.getGestionnaire().get(p);
+		return this.gestionnaire.get(p);
 	}
 	
 	public boolean modifier(Personne p, Contact c) {
@@ -53,28 +51,26 @@ public class GestionnaireContacts {
 	}
 	
 	public Set<Personne> personnes() {
-		return this.getGestionnaire().keySet();
+		return this.gestionnaire.keySet();
 	}
 	
 	public Set<Personne> personnes(String prefix) {
-		Set<Personne> test = this.getGestionnaire().keySet();
-		Set<Personne> test2 = new HashSet<Personne>();
-		Iterator<Personne> iterator = test.iterator();
+		Set<Personne> keys = this.gestionnaire.keySet();
+		Set<Personne> set = new HashSet<Personne>();
+		Iterator<Personne> iterator = keys.iterator();
 		while (iterator.hasNext()) {
 			Personne p = iterator.next();
 			String nom = p.getNom();
 			boolean bool = nom.matches("^" + prefix +".*");
 			if (bool) {
-				test2.add(p);
+				set.add(p);
 			}
 		}
-		return test2;
+		return set;
 	}
 	
 	public boolean supprimer(Personne p) {
-		HashMap<Personne, Contact> gestionnaire= this.getGestionnaire();
 		Contact c = gestionnaire.remove(p);
-		this.setGestionnaire(gestionnaire);
-		return !this.getGestionnaire().containsValue(c);
+		return !this.gestionnaire.containsValue(c);
 	}
 }
