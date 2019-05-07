@@ -17,13 +17,13 @@ public class Main {
 		List<Personne> personnes = new ArrayList<Personne>();
 		Calendar c1 = Calendar.getInstance();
 		c1.set(1997, 10, 7);
-		Personne personne1 = new Personne("Dodefroy", "Simon", c1);
+		Personne personne1 = new Personne("Dupont", "Serge", c1);
 		Calendar c2 = Calendar.getInstance();
 		c2.set(1993, 4, 31);
 		Personne personne2 = new Personne("AAA", "Bruno", c2);
 		Calendar c3 = Calendar.getInstance();
 		c3.set(1957, 10, 28);
-		Personne personne3 = new Personne("Godefroy", "René", c3);
+		Personne personne3 = new Personne("Montmirail", "Godefroy", c3);
 //		personnes.add(personne1);
 //		personnes.add(personne1);
 //		personnes.add(personne2);
@@ -33,7 +33,7 @@ public class Main {
 //		System.out.println("Reverse---------------------------------------");
 //		Collections.reverse(personnes);
 //		afficherPersonnes(personnes);
-//		System.out.println("Schuffle---------------------------------------");
+//		System.out.println("Shuffle---------------------------------------");
 //		Collections.shuffle(personnes);
 //		afficherPersonnes(personnes);
 //		System.out.println("HashSet---------------------------------------");
@@ -76,8 +76,8 @@ public class Main {
 		Personne z = new Personne("ZZZZZ", "XYZJSDJSIGDJDFJ", datez);
 		NumTel numTel1 = new NumTel("0123456789", TypeTel.FIXEPROF);
 		NumTel numTel2 = new NumTel("0123456789", TypeTel.FIXEDOM);
-		Adresse adresse1 = new Adresse(98, "Carnot", 77590, "Bois-Le-Roi");
-		Mail mail1 = new Mail("szgodefroy", "IMTLD.fr");
+		Adresse adresse1 = new Adresse(98, "Carnot", 77590, "Bar-Le-Duc");
+		Mail mail1 = new Mail("gdemontmirail", "IMTLD.fr");
 		gestionnaire.ajouter(x, numTel1);
 		gestionnaire.ajouter(y, adresse1);
 		gestionnaire.ajouter(z, mail1);
